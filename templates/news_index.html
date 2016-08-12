@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load construct_extras %}
+
+{% block title %} News {% endblock %}
+
+{% block subheader %} Новости компании 	{% endblock %}
+
+{% block content %}
+
+
+
+<div class="row">
+<div class="span8">
+<ul class="blog-list">
+	{% for news in latest_news_list %}
+	<li>
+		<div class="info">
+			<div class="date-box">
+				<span class="day">{{news.created_at.day}}</span>
+				<span class="month">{{ news.created_at.month|month }}</span>
+			</div>
+		</div>
+		<div class="preview">
+			<img src="{{ news.image.url }}" data-original="{{ news.image.url }}" alt="" style="display: inline;">
+			<a href="news/{{ news.id }}">
+				<h3 class="blog-title">{{ news.title }}</h3>
+			</a>
+			{{ news.text }}
+		</div>
+		<div class="meta-info">От <a href="#">Admin</a><span>|</span><a href="#">События</a>, <a href="#">События</a><span>|</span><a href="#">2 Комм.</a><span>|</span> </div>
+	</li>
+	{% endfor %}
+</ul>
+</div>
+<div id="sidebar" class="span4">
+    <div class="widget latest_news">
+        <h4 class="title">Последние новости</h4>
+        <ul class="bloglist-small">
+            <li>
+                <div class="date-box">
+                    <span class="day">28</span>
+                    <span class="month">Авг</span>
+                </div>
+                <div class="txt">
+                    <h5><a href="css/index.html#">Название короткой новости</a></h5>
+                    <div>
+                        <div>Идейные соображения высшего порядка, а также постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации систем массового участия. </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="date-box">
+                    <span class="day">26</span>
+                    <span class="month">Авг</span>
+                </div>
+                <div class="txt">
+                    <h5><a href="css/index.html#">Название короткой новости</a></h5>
+                    Идейные соображения высшего порядка, а также постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации систем массового участия.
+                </div>
+            </li>
+            <li>
+                <div class="date-box">
+                    <span class="day">18</span>
+                    <span class="month">Авг</span>
+                </div>
+                <div class="txt">
+                    <h5><a href="css/index.html#">Название короткой новости</a></h5>
+                    Идейные соображения высшего порядка, а также постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации систем массового участия.
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- widget category -->
+    <div class="widget widget_category">
+        <h4 class="title"><span>Category</span></h4>
+        <ul>
+            <li><a href="#"><i class="icon-folder-close"></i>Новости</a></li>
+            <li><a href="#"><i class="icon-folder-close"></i>События</a></li>
+            <li><a href="#"><i class="icon-folder-close"></i>Услуги</a></li>
+            <li><a href="#"><i class="icon-folder-close"></i>Работы</a></li>
+            <li><a href="#"><i class="icon-folder-close"></i>Проекты</a></li>
+        </ul>
+    </div><!-- widget tags -->
+    <div class="widget widget_tags">
+        <h4 class="title"><span>Теги</span></h4>
+        <ul>
+            <li><a href="#link">Строительство</a></li>
+            <li><a href="#link">Шаблоны сайтов</a></li>
+            <li><a href="#link">Дизайн</a></li>
+            <li><a href="#link">Верстка</a></li>
+            <li><a href="#link">Партнеры</a></li>
+            <li><a href="http://html6.com.ru">Платные шаблоны</a></li>
+            <li><a href="#link">Бесплатные шаблоны сайтов</a></li>
+            <li><a href="#link">Купить шаблоны</a></li>
+            <li><a href="#link">Скачать шаблоны</a></li>
+        </ul>
+    </div>
+    <!-- widget text -->
+                    <div class="widget widget-text">
+                        <h4 class="title"><span>Доп. информация</span></h4>
+                        <div>Идейные соображения высшего порядка, а также постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации систем массового участия. Разнообразный и богатый опыт сложившаяся структура организации требуют от нас анализа форм развития. Задача организации, в особенности же сложившаяся структура организации представляет собой интересный эксперимент проверки модели развития.&nbsp;</div>
+                    </div>
+
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d60424.41706979944!2d37.61154170399259!3d55.74919347969923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1443187015472" width="100%" height="370" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                    </div>
+</div>
+
+
+
+</div>
+</div>
+
+{% endblock %}

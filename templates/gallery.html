@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load construct_extras %}
+
+{% block title %} {{ news.news_title }} {% endblock %}
+
+{% block subheader %}{{ news.news_title }}{% endblock %}
+{% block content %}
+{% for img in images %}
+<div class="row">
+	<div id="gallery" class="gallery">
+		<div class="span3 item news">
+			<a class="preview" href="{{ img.url }}" data-gal="prettyPhoto" title="Описание">
+				<img src="{{ img.image.url }}" data-original="{{ img.image.url }}" alt="">
+			</a>
+			<h4>{{ img.text }}</h4>
+			<span>{{ img.created_at }}</span>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}

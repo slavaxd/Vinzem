@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load construct_extras %}
+
+{% block title %} {{ page.title }} {% endblock %}
+
+{% block subheader %} {{ page.title }} {% endblock %}
+
+{% block content %}
+     <section id="slider">
+        <div class="flexslider main-slider">
+            <ul class="slides">
+                {% for slider in sliders %}
+                <li>
+                	<div class="container">
+                        <div class="slider-info">
+                            <div class="inner">
+                                <h1>{{ slider.title }}</h1>
+                                <div class="slider-text">
+                                    {{ slider.content }}
+                                </div>
+                                <a class="btn btn-primary">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="{{ slider.image.url }}" alt="">
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <!-- slider close -->
+
+
+{% endblock %}
