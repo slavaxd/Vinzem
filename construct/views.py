@@ -2,21 +2,44 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import loader
+import random
 
-from .models import News, GalleryImage, StaticPage, Application, Slider
+from .models import News, GalleryImage, StaticPage, Application, Slider, Service, Person
 
 from .forms import ApplicationForm
 
 def index(request):
+	result = {}
+	categories = []
+	for x in range(4):
+		category_size = Service.objects.filter(category=str(x)).count()
+		r = random.randint(0, category_size-1)
+		categories.append(Service.objects.filter(category=str(x))[r])
+	#print categories
 	sliders = Slider.objects.order_by('-id')[:3]
+	result['categories'] = categories
+	result['sliders'] = sliders
 	template = loader.get_template("index.html")
-	return HttpResponse(template.render(locals(), request))
+	print result
+	return HttpResponse(template.render(result, request))
 
 def services(request):
-	pass
+
+	result = {}
+	categories = {}
+	for x in range(4):
+		cat = Service.objects.filter(category=str(x))[0].category
+		categories[cat] = Service.objects.filter(category=str(x))
+	result["categories"] = categories
+	template = loader.get_template("services.html")
+	result["names"] = ['Землевиорні роботи', 'Землеоціночні роботи', 'Якісь ще роботи', 'Останні роботи']
+	print result
+	return HttpResponse(template.render(result, request))
 
 def single_service(request, service_id):
-	pass
+    service = Service.objects.get(id=service_id)
+    template = loader.get_template("single_service.html")
+    return HttpResponse(template.render(locals(), request))
 
 def application(request):
 	pass	
@@ -55,4 +78,9 @@ def contact(request):
 def static_page(request, page_slug):
 	page = StaticPage(slug=page_slug)
 	template = loader.get_template("static_page.html")
+	return HttpResponse(template.render(locals(), request))
+
+def structure(request):
+	people = Person.objects.all()
+	template = loader.get_template("structure.html")
 	return HttpResponse(template.render(locals(), request))

@@ -4,13 +4,14 @@ from django import forms
 from ckeditor.widgets import CKEditorWidget
 
 
-from .models import News, GalleryImage, StaticPage, Application, Slider
+from .models import News, GalleryImage, StaticPage, Application, Slider, Service, Person
 
 #admin.site.register(News)
 admin.site.register(GalleryImage)
 #admin.site.register(StaticPage)
 admin.site.register(Application)
 admin.site.register(Slider)
+admin.site.register(Person)
 
 class NewsAdminForm(forms.ModelForm):
     text = forms.CharField(widget=CKEditorWidget())
@@ -39,3 +40,4 @@ class StaticPageAdmin(admin.ModelAdmin):
 
 admin.site.register(News, NewsAdmin)
 admin.site.register(StaticPage, StaticPageAdmin)
+admin.site.register(Service)

@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^gallery$', views.gallery, name='gallery'),
     url(r'^contact$', views.contact, name='contact'),
     url(r'^page/(?P<page_slug>[-\w]+)$', views.static_page, name='static_page'),
+    url(r'^structure$', views.structure, name='structure'),
 
 ]

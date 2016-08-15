@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load construct_extras %}
+
+{% block title %} Перелік послуг {% endblock %}
+
+{% block subheader %} Перелік послуг {% endblock %}
+
+{% block content %}
+
+    {% for category, services in categories.items %}
+
+    <div class="row">
+    <div class="text-title">
+        <h2>{{ category|categ }}</h2>
+        <div>{{ category|subt }}</div>
+    </div>
+
+    <ul class="ourservice-list-3">
+
+        {% for service in services %}
+
+        <li class="span3"><a class="preview" href="{{ service.image.url }}" data-gal="prettyPhoto" title="Описание">
+            <img data-original="{{ service.image.url }}"  src="{{ service.image.url }}" class="img-polaroid img-hover" alt=""></a>
+            <div class="text">
+                <div class="price">{{ service.price }} грн.</div>
+                <a href="services/{{ service.id }}">
+                    <h4>{{ service.subtitle }}</h4>
+                </a>
+                {{ service.text }}
+            </div>
+        </li>
+
+        {% endfor %}
+    </ul>
+    </div>
+        <hr>
+    {% endfor %}
+
+{% endblock %}

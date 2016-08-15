@@ -1,7 +1,7 @@
 # coding: utf-8
 from django.db import models
 
-from taggit.managers import TaggableManager
+#from taggit.managers import TaggableManager
 
 class News(models.Model):
 	image = models.ImageField(upload_to='static/img')
@@ -23,7 +23,6 @@ class GalleryImage(models.Model):
 	text = models.CharField(max_length=40)
 	created_at = models.DateTimeField(auto_now_add=True)
 	is_published = models.BooleanField()
-	tags = TaggableManager()
 
 	def __unicode__(self):
 		return self.text
@@ -71,3 +70,41 @@ class Slider(models.Model):
 		verbose_name = u"Слайдер"
 		verbose_name_plural = u"Слайдери"
 
+class Service(models.Model):
+	image = models.ImageField(upload_to='static/img')
+	title = models.CharField(max_length=100)
+	subtitle = models.CharField(max_length=500)
+	text = models.CharField(max_length=5000)
+	created_at = models.DateTimeField(auto_now_add=True)
+	price = models.IntegerField()
+
+
+	CATEGORY_CHOICES = (
+		('0', 'Землевиорні роботи'),
+		('1', 'Землеоціночні роботи'),
+		('2', 'Якісь ще роботи'),
+		('3', 'Останні роботи')
+	)
+	category = models.CharField(max_length=1, choices=CATEGORY_CHOICES)
+
+	is_published = models.BooleanField()
+
+	def __unicode__(self):
+		return self.title
+
+	class Meta():
+		verbose_name = u"Послуга"
+		verbose_name_plural = u"Послуги"
+
+
+class Person(models.Model):
+	image = models.ImageField(upload_to='static/img')
+	name = models.TextField(max_length=300)
+	description = models.TextField(max_length=5000)
+
+	def __unicode__(self):
+		return self.name
+
+	class Meta():
+		verbose_name = u"Людина"
+		verbose_name_plural = u"Люди"

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load construct_extras %}
+
+{% block title %} {{ service.title }} {% endblock %}
+
+{% block subheader %} {{ service.title }} {% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="ourservice-single">
+            <div class="span8">
+                <img data-original="{{ service.image.url }}"  src="/{{ service.image.url }}" class="img-polaroid" alt="">
+            </div>
+            <div class="span4">
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.text }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

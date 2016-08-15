@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load construct_extras %}
 
-{% block title %} {{ page.title }} {% endblock %}
+{% block title %} ДП "Він..." {% endblock %}
 
-{% block subheader %} {{ page.title }} {% endblock %}
+{% block subheader %} ДП "Він.." {% endblock %}
 
 {% block content %}
      <section id="slider">
@@ -29,6 +29,117 @@
         </div>
     </section>
     <!-- slider close -->
+<div id="content">
+<div class="container">
+<div class="row">
+    <div class="clearfix"></div>
 
+    <div class="text-title">
+        <h2>Вітаємо!</h2>
+        <div>Ви знаходитесь на сайті ДП "Він..."</div>
+    </div>
+
+    <div class="span3   ">
+        <div class="featured-box">
+            <div class="text">
+                <h3>Якість</h3>
+                Опис якості
+            </div>
+        </div>
+    </div>
+
+    <div class="span3">
+        <div class="featured-box">
+            <i class="fa-bolt icon-4x" aria-hidden="true"></i>
+            <div class="text">
+
+                <h3>Швидкість</h3>
+                Опис швидкості
+            </div>
+        </div>
+    </div>
+    <div class="span3">
+        <div class="featured-box">
+            <i class="fa-percent icon-4x" aria-hidden="true"></i>
+            <div class="text">
+                <h3>Ціна</h3>
+                Опис ціни
+            </div>
+        </div>
+    </div>
+    <div class="span3">
+        <div class="featured-box">
+            <i class="fa-diamond icon-4x" aria-hidden="true"></i>
+            <div class="text">
+                <h3>Якість</h3>
+                Опис якості
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+    <!-- paralax background -->
+    <section id="ourservice-parallax-bg" data-speed="5" data-type="background">
+        <div class="container">
+            <div class="row">
+                <div class="text-title">
+                    <h2>Професійний підхід до кожного виду робіт</h2>
+                    <div>Опис</div>
+                </div>
+                {{ services }}
+                {% for service in categories %}
+                    <!-- ourservice item begin -->
+                    <div class="span3 ourservice-item">
+                        <a class="preview" href="{{ service.image.url }}" data-gal="prettyPhoto" title="Описание">
+                            <img data-original="{{ service.image.url }}" src="{{ service.image.url }}" alt="" class="img-hover"></a>
+                        <div class="text">
+                            <h4><a href="#">{{ service.title }}</a></h4>
+                            <div class="teaser">
+                                {{ service.text }}
+                            </div>
+                            <div class="price">
+                                {{ service.price }} грн.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ourservice item close -->
+
+                {% endfor %}
+
+
+
+            </div>
+        </div>
+    </section>
+
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            <div class="text-title">
+                <h2>Title</h2>
+                <div>С другой стороны постоянное информационно-пропагандистское обеспечение нашей</div>
+            </div>
+            <ul class="bloglist-small">
+                <li>
+                    <div class="txt">
+                        <h4><a href="css/index.html#">Оформленне документів учасникам АТО та уг.БД за 50% від вартості </a></h4>
+                        <span class="read">С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения соответствующий условий активизации. <a href="#">Подробнее</a></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="txt">
+                        <h4><a href="css/index.html#">Знижки при оплаті</a></h4>
+                        <span class="read">С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения соответствующий условий активизации. <a href="#">Подробнее</a></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="txt">
+                        <h4><a href="css/index.html#">Терміновість</a></h4>
+                        <span class="read">С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения соответствующий условий активизации. <a href="#">Подробнее</a></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
 {% endblock %}

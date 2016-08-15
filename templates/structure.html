@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load construct_extras %}
+
+{% block title %} Структура інституту {% endblock %}
+
+{% block subheader %} Структура інституту {% endblock %}
+
+{% block content %}
+{% for person in people %}
+    <p><img src="{{ person.image.url }}" width="100" height="100"> => {{ person.name }}</p>
+    <p>{{ person.description }}</p>
+{% endfor %}
+
+{% endblock %}
