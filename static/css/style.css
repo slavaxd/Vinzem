@@ -1092,3 +1092,10 @@ address span strong {
         display: inline-block
     }
 }
+
+.teaser { display:none;}
+
+.ourservice-item:hover .teaser {
+	display: block;
+}
+
