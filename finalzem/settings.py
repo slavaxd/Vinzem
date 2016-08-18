@@ -31,9 +31,9 @@ STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
 SECRET_KEY = '8m&ko4n*3s+3l3n(*709wl$-b%7!&h#v800ep5$pkf)xsuaj*2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     #'material.admin',
     'taggit',
     'flat',
+#    'django.contrib.sites'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,3 +125,5 @@ STATICFILES_DIRS = (
 
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_UPLOAD_PATH = "static/"
+
+SITE_ID = 1
