@@ -47,7 +47,7 @@ class StaticPage(models.Model):
 class Application(models.Model):
 	author_name = models.TextField()
 	email = models.EmailField()
-	datetime = models.DateTimeField()
+	datetime = models.TextField()
 	service = models.TextField()
 	message = models.TextField()
 

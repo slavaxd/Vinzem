@@ -6,9 +6,23 @@
 {% block subheader %} Структура інституту {% endblock %}
 
 {% block content %}
-{% for person in people %}
-    <p><img src="{{ person.image.url }}" width="100" height="100"> => {{ person.name }}</p>
-    <p>{{ person.description }}</p>
-{% endfor %}
+
+
+<table>
+    {% for person in people %}
+    <tr>
+        <td style="height: 300px; width: 200px" rawspan="2"><img src="{{ person.image.url }}"></td>
+        <td>
+            <h3 align="center">{{ person.name }}</h3>
+            <p align="center">{{ person.description }}</p>
+        </td>
+
+
+    </tr>
+
+
+
+    {% endfor %}
+</table>
 
 {% endblock %}

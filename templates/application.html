@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load construct_extras %}
+
+{% block title %} Заявка {% endblock %}
+
+{% block subheader %} Відправте нам заявку і ми відповімо Вам у найближчий час 	{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="span8">
+    <div class="contact_form_holder">
+         <form id="contact" class="row" name="form1" method="post" action="/contact">
+             {% csrf_token %}
+             <div class="span4">
+                <label>Ім'я</label>
+                {{ form.author_name }}
+             </div>
+             <div class="span4">
+                 <label>Email <span class="req">*</span></label>
+                 {{ form.email }}
+                  <div id="error_email" class="error">Пожалуйста, введите Email!</div>
+             </div>
+             <div class="span4">
+                  <label>Коли Вам зателефонувати? <span class="req">*</span></label>
+                  {{ form.datetime }}
+                  <div id="error_datepicker" class="error">Попробуйте еще раз!</div>
+             </div>
+             <div class="span4">
+                  <label>Послуга <span class="req">*</span></label>
+                  {{ form.service }}
+                  <div id="error_person_num" class="error">Еще раз!</div>
+             </div>
+             <div class="span8">
+                  <label>Повідомлення</label>
+                  {{ form.message }}
+                  <div id="error_message" class="error">Введите сообщение</div>
+                  <div id="mail_success" class="success">Спасибо, отправлено!</div>
+                  <div id="mail_failed" class="error">Ошибка!</div>
+
+                  <p id="btnsubmit">
+                  <input type="submit" id="send" value="Отправить" class="btn btn-large" /></p>
+             </div>
+
+
+         </form>
+    </div>
+</div>
+
+
+ </div>
+</div>
+
+{% endblock %}

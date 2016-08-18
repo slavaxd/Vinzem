@@ -1,6 +1,8 @@
 # coding: utf-8
 from django import template
 
+from HTMLParser import HTMLParser
+
 register = template.Library()
 
 @register.filter(name='month')
@@ -20,7 +22,13 @@ def subt(value):
     res = l[int(value)]
     return res
 
-@register.filter(name='first_fifty')
-def first_fifty(value):
+@register.filter(name='fifty')
+def fifty(value):
     res = value[:50] + "..."
+    return res
+
+@register.filter(name='unescape')
+def unescape(value):
+    h = HTMLParser()
+    res = h.unescape(value)
     return res

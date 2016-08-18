@@ -16,7 +16,7 @@ def index(request):
 		r = random.randint(0, category_size-1)
 		categories.append(Service.objects.filter(category=str(x))[r])
 	#print categories
-	sliders = Slider.objects.order_by('-id')[:3]
+	sliders = Slider.objects.order_by('id')[:4]
 	result['categories'] = categories
 	result['sliders'] = sliders
 	template = loader.get_template("index.html")
@@ -42,7 +42,21 @@ def single_service(request, service_id):
     return HttpResponse(template.render(locals(), request))
 
 def application(request):
-	pass	
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = ApplicationForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            appl = form.save(commit=False)
+            appl.save()
+            return HttpResponseRedirect('/')
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = ApplicationForm()
+
+    return render(request, 'application.html', {'form': form})
 
 def news_index(request):
 	latest_news_list = News.objects.order_by('-id')[:3]
@@ -66,8 +80,9 @@ def contact(request):
         form = ApplicationForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/thanks/')
+            appl = form.save(commit=False)
+            appl.save()
+            return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
     else:

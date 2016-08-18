@@ -25,7 +25,7 @@
 			<a href="news/{{ news.id }}">
 				<h3 class="blog-title">{{ news.title }}</h3>
 			</a>
-			{{ news.text }}
+			{{ news.text|unescape }}
 		</div>
 		<div class="meta-info">От <a href="#">Admin</a><span>|</span><a href="#">События</a>, <a href="#">События</a><span>|</span><a href="#">2 Комм.</a><span>|</span> </div>
 	</li>
@@ -46,7 +46,7 @@
                 <div class="txt">
                     <h5><a href="news/{{ news.id }}">{{ news.title }}</a></h5>
                     <div>
-                        <div>{{ news.text|first_fifty }}</div>
+                        <div>{{ news.text|unescape|first_fifty }}</div>
                     </div>
                 </div>
             </li>

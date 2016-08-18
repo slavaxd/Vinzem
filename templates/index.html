@@ -6,6 +6,21 @@
 {% block subheader %} ДП "Він.." {% endblock %}
 
 {% block content %}
+
+    <script>
+        $(document).ready(
+            function () {
+                $(".text .teaser").hide();
+                $(".service-preview").mouseover(
+                    function (el) {
+                        $(".text .teaser").show();
+                    }).mouseout(
+                    function (el) {
+                        $(".text .teaser").hide();
+                    })
+                }
+        )
+    </script>
      <section id="slider">
         <div class="flexslider main-slider">
             <ul class="slides">
@@ -90,13 +105,13 @@
                 {{ services }}
                 {% for service in categories %}
                     <!-- ourservice item begin -->
-                    <div class="span3 ourservice-item">
+                    <div class="span3 ourservice-item service-preview">
                         <a class="preview" href="{{ service.image.url }}" data-gal="prettyPhoto" title="Описание">
                             <img data-original="{{ service.image.url }}" src="{{ service.image.url }}" alt="" class="img-hover"></a>
                         <div class="text">
                             <h4><a href="#">{{ service.title }}</a></h4>
                             <div class="teaser">
-                                {{ service.text }}
+                                {{ service.text|fifty }}
                             </div>
                             <div class="price">
                                 {{ service.price }} грн.
@@ -115,6 +130,7 @@
 
 <div class="container">
     <div class="row">
+
         <div class="span6">
             <div class="text-title">
                 <h2>Title</h2>
@@ -141,5 +157,18 @@
                 </li>
             </ul>
         </div>
+        <div class="span6">
+            <a class="blog-logo" href="http://land.gov.ua/" title="Державна служба України з питань геодезії, картографії та кадастру — Офіційний веб-сайт" rel="home">
+                <img src="http://land.gov.ua/wp-content/uploads/2016/01/logo.png" alt="Державна служба України з питань геодезії, картографії та кадастру"  width="341" height="227">
+            </a>
+            <a  href="http://map.land.gov.ua/kadastrova-karta" title="Публічна кадастрова карта — Офіційний веб-сайт" target="_blank">
+                <img  class="alignnone size-full" src="http://land.gov.ua/wp-content/uploads/2015/07/bunner-map.jpg" width="340" height="228">
+            </a>
 
+            <a  href="http://www.vin.gov.ua/" title="Вінницька ОДА — Офіційний веб-сайт" target="_blank">
+                <img  class="alignnone size-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Prapor_Vinnytskoyi_oblasti.svg/2000px-Prapor_Vinnytskoyi_oblasti.svg.png" width="340" height="340">
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}
