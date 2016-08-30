@@ -25,8 +25,4 @@ urlpatterns = [
 ]# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
-<<<<<<< HEAD
 #urlpatterns += staticfiles_urlpatterns()
-=======
-urlpatterns += staticfiles_urlpatterns()
->>>>>>> 5dcff49c0da17337ae91b49022c05e6163db5954
