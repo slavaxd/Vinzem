@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load construct_extras %}
+{% load thumbnail %}
 
 {% block title %} ДП "Він..." {% endblock %}
 
@@ -24,8 +25,8 @@
                             </div>
                         </div>
                     </div>
-                    <img src="{{ slider.image.url }}" alt="">
-                </li>
+                    <img src="/{{ slider.image.url }}"
+                  </li>
                 {% endfor %}
             </ul>
         </div>
@@ -96,7 +97,7 @@
                         <a class="preview" href="{{ service.image.url }}" data-gal="prettyPhoto" title="Описание">
                             <img data-original="{{ service.image.url }}" src="{{ service.image.url }}" alt="" class="img-hover"></a>
                         <div class="text">
-                            <h4><a href="#">{{ service.title }}</a></h4>
+                            <h4><a href="/services/{{ service.id }}">{{ service.title }}</a></h4>
                             <div class="teaser">
                                 {{ service.text|fifty }}
                             </div>

@@ -52,7 +52,8 @@ INSTALLED_APPS = (
     'construct',
     'ckeditor',
     'ckeditor_uploader',
-    'easy_thumbnails',    #'grappelli',
+    'sorl.thumbnail',
+#    'easy_thumbnails',    #'grappelli',
 
 )
 

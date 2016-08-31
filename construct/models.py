@@ -1,6 +1,7 @@
 # coding: utf-8
 from django.db import models
 
+from autoslug import AutoSlugField
 #from taggit.managers import TaggableManager
 
 class News(models.Model):
@@ -9,6 +10,7 @@ class News(models.Model):
 	text = models.CharField(max_length=5000)
 	created_at = models.DateTimeField(auto_now_add=True)
 	is_published = models.BooleanField()
+	slug = AutoSlugField(populate_from='title', unique_with='created_at__month')
 
 	def __unicode__(self):
 		return self.title
