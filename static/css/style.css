@@ -737,7 +737,7 @@ address span strong {
     margin-bottom: 5px
 }
 .bloglist-small li .txt {
-    padding-left: 80px
+    padding-left: 0;
 }
 .bloglist-small li .read {
     display: block;
