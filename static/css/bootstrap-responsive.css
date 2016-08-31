@@ -154,6 +154,10 @@
   .span6 {
     width: 570px;
   }
+  
+  .pic{
+    margin-left: 25px;
+  }
   .span5 {
     width: 470px;
   }
