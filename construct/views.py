@@ -30,7 +30,7 @@ def services(request):
 	for x in range(4):
 		cat = Service.objects.filter(category=str(x))[0].category
 		categories[cat] = Service.objects.filter(category=str(x))
-	result["categories"] = sorted(categories)
+	result["categories"] = categories
 	template = loader.get_template("services.html")
 	result["names"] = ['Землевпорядні роботи', 'Землеоціночні роботи', 'Геодезичні роботи', 'Інші послуги']
 	print result
