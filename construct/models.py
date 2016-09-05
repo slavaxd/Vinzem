@@ -82,10 +82,10 @@ class Service(models.Model):
 
 
 	CATEGORY_CHOICES = (
-		('0', 'Землевиорні роботи'),
+		('0', 'Землевпорядні роботи'),
 		('1', 'Землеоціночні роботи'),
-		('2', 'Якісь ще роботи'),
-		('3', 'Останні роботи')
+		('2', 'Геодезичні роботи'),
+		('3', 'Інші послуги')
 	)
 	category = models.CharField(max_length=1, choices=CATEGORY_CHOICES)
 

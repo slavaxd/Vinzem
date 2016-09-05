@@ -32,7 +32,7 @@ def services(request):
 		categories[cat] = Service.objects.filter(category=str(x))
 	result["categories"] = categories
 	template = loader.get_template("services.html")
-	result["names"] = ['Землевиорні роботи', 'Землеоціночні роботи', 'Якісь ще роботи', 'Останні роботи']
+	result["names"] = ['Землевпорядні роботи', 'Землеоціночні роботи', 'Геодезичні роботи', 'Інші послуги']
 	print result
 	return HttpResponse(template.render(result, request))
 
