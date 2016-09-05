@@ -154,7 +154,6 @@
   .span6 {
     width: 570px;
   }
-  
   .pic{
     margin-left: 25px;
   }
@@ -486,6 +485,7 @@
   .navbar-fixed-top .container,
   .navbar-fixed-bottom .container {
     width: 724px;
+    
   }
   .span12 {
     width: 724px;
@@ -828,6 +828,7 @@
   }
   .container {
     width: auto;
+
   }
   .row-fluid {
     width: 100%;

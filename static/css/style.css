@@ -1093,9 +1093,14 @@ address span strong {
     }
 }
 
-.teaser { display:none;}
-
+.teaser { 
+    display:none;
+    z-index: 1;
+    position: static;
+}
 .ourservice-item:hover .teaser {
 	display: block;
+    z-index: 1;
+    position: static;
 }
 
