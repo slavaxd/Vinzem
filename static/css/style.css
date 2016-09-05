@@ -16,7 +16,7 @@ header.clone {
     width: 100%;
     position: fixed;
     top: -80px;
-    transition: 0.2s top ease-in
+    transition: 0.2s top ease-in;
 }
 header.clone #logo {
     display: none
@@ -94,11 +94,24 @@ a:hover {
     color: #ec6841
 }
 #logo {
-    text-align: center
+    text-align: left
 }
 #logo .inner {
+    width:100%;
     margin: 40px 0 40px 0;
-    display: inline-block
+    display: inline-block;
+}
+#logo .inner a h3{
+    float:right;
+    font-size: 3.5em;
+    color: #F8A775;
+    margin-top: 1.5em;
+    margin-right: 3.5em;
+    
+}
+#logo .inner a img{
+    margin: 0 3em;
+    width:15em;
 }
 #content {
     padding: 60px 0 60px 0
