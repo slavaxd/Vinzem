@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load construct_extras %}
+{% load imagefit %} 
 
 {% block title %} Наша галерея {% endblock %}
 
@@ -10,8 +11,8 @@
     {% for img in images %}
 
 		<div class="span3 item">
-			<a class="preview" href="{{ img.image.url }}" data-gal="prettyPhoto" title="Описание">
-				<img src="{{ img.image.url }}" data-original="{{ img.image.url }}" alt="">
+			<a class="preview" href="{{ img.image.url|resize:"640x427,C" }}" data-gal="prettyPhoto" title="Описание">
+				<img src="{{ img.image.url|resize:"640x427,C" }}" data-original="{{ img.image.url|resize:"640x427,C" }}" alt="">
 			</a>
 			<h4>{{ img.text }}</h4>
 			<span>{{ img.created_at }}</span>

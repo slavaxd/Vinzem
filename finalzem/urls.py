@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('construct.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^imagefit/', include('imagefit.urls')),
 ]# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'ckeditor_uploader',
     'sorl.thumbnail',
+    'imagefit',
 #    'easy_thumbnails',    #'grappelli',
 
 )
@@ -126,3 +127,14 @@ CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.j
 CKEDITOR_UPLOAD_PATH = "static/"
 
 SITE_ID = 1
+
+IMAGEFIT_ROOT = ""
+# enable/disable server cache
+#IMAGEFIT_CACHE_ENABLED = True
+#IMAGEFIT_CACHE_BACKEND_NAME = 'imagefit'
+#CACHES = {
+"""    'imagefit': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(tempfile.gettempdir(), 'django_imagefit')
+        }
+    }"""
