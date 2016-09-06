@@ -21,3 +21,5 @@ requests-oauthlib==0.6.2
 six==1.10.0
 sorl-thumbnail==12.3
 virtualenv==15.0.2
+django-imagefit==0.4
+

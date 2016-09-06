@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load construct_extras %}
+{% load imagefit %} 
 
 {% block title %} News {% endblock %}
 
@@ -21,7 +22,7 @@
             			</div>
             		</div>
             		<div class="preview">
-            			<img src="{{ news.image.url }}" data-original="{{ news.image.url }}" alt="" style="display: inline;">
+            		<!--news.image.url-->	<img src="{{ news.image.url|resize:'320x240' }}" data-original="{{ news.image.url|resize:'320x240' }}" alt="" style="display: inline;">
             			<a href="news/{{ news.id }}">
             				<h3 class="blog-title">{{ news.title }}</h3>
             			</a>
