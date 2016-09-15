@@ -12,14 +12,14 @@
 
                 </div>
             </div>
-<!--div class="row">
+<div class="row">
                 <div class="span12">
                     <ul id="filters">
                         <li><a href="#" data-filter="*" class="selected">Все</a></li>
                     </ul>
 
                 </div>
-            </div-->
+            </div>
 <div class="row">
 	<div id="gallery" class="gallery">
     {% for img in images %}
@@ -35,8 +35,16 @@
     {% endfor %}
 	</div>
 </div>
+<script><div class="row">
+                <div class="span12">
+                    <ul id="filters">
+                        <li><a href="#" data-filter="*" class="selected">Все</a></li>
+                        <li><a href="#" data-filter=".event">Новые</a></li>
+                        <li><a href="#" data-filter=".news">Популярные</a></li>
+                        <li><a href="#" data-filter=".gallery">В работе</a></li>
+                        <li><a href="#" data-filter=".promotion">Специальные</a></li>
+                    </ul>
 
-<script>/*$(document).load(*/
-setTimeout(function(){$('body').trigger('resize'); console.log("resizing");}, 1000)
-/*});*/</script>
+                </div>
+            </div></script>
 {% endblock %}
