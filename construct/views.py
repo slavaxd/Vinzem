@@ -13,8 +13,9 @@ def index(request):
 	categories = []
 	for x in range(4):
 		category_size = Service.objects.filter(category=str(x)).count()
-		r = random.randint(0, category_size-1)
-		categories.append(Service.objects.filter(category=str(x))[r])
+		if category_size > 0:
+			r = random.randint(0, category_size-1)
+			categories.append(Service.objects.filter(category=str(x))[r])
 	#print categories
 	sliders = Slider.objects.order_by('id')[:4]
 	result['categories'] = categories

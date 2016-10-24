@@ -128,13 +128,19 @@ CKEDITOR_UPLOAD_PATH = "static/"
 
 SITE_ID = 1
 
-IMAGEFIT_ROOT = ""
+'''IMAGEFIT_ROOT = ""
 # enable/disable server cache
-#IMAGEFIT_CACHE_ENABLED = True
-#IMAGEFIT_CACHE_BACKEND_NAME = 'imagefit'
-#CACHES = {
-"""    'imagefit': {
+IMAGEFIT_CACHE_ENABLED = True
+IMAGEFIT_CACHE_BACKEND_NAME = 'imagefit'
+settings.CACHES = {
+    IMAGEFIT_CACHE_BACKEND_NAME: {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(tempfile.gettempdir(), 'django_imagefit')
+    }
+}'''
+'''CACHES = {
+    'imagefit': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
         'LOCATION': os.path.join(tempfile.gettempdir(), 'django_imagefit')
         }
-    }"""
+    }'''
