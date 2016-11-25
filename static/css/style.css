@@ -801,7 +801,7 @@ address span strong {
 }
 .featured-box .text {
     padding-left: 70px;
-    height: 6em;
+    height:6em;
 }
 .flexslider {
     margin: 0;
@@ -1019,6 +1019,11 @@ address span strong {
     background: #fff;
     color: #555
 }
+#slider_img{
+        max-height: 450px;
+        min-height:450px;
+        max-width:1200px
+}
 @media (max-width: 1170px) {
     .main-slider .slider-info .inner {
         padding-top: 30px
@@ -1054,7 +1059,6 @@ address span strong {
         height: auto
     }
     header.clone #logo {
-        padding-top: 20px;
         display: block
     }
     #logo {
@@ -1066,7 +1070,7 @@ address span strong {
         display: block;
         width: 100%;
         height: auto;
-        margin: 20px 0 20px 0
+        margin: 0
     }
     #booking input,
     #booking select {
@@ -1079,8 +1083,8 @@ address span strong {
     .selectnav {
         display: block;
         margin: 0 auto;
-        margin-top: 40px;
-        margin-bottom: 20px
+        margin-top: 5px;
+        margin-bottom: 0
     }
     #featured .item {
         width: 270px;
@@ -1108,6 +1112,29 @@ address span strong {
     footer nav {
         display: inline-block
     }
+    #logo .inner a img{
+        width:170px;
+        margin:0;
+        margin-bottom: 5px;
+    }
+    #logo .inner a h3{
+        display: none;
+    }
+    #mainourservice-container{
+        height:50px;
+        padding-bottom:10px;
+        padding-top:10px;
+    }
+    #mainourservice-container select{
+        height:90%;
+        font-size:18px;
+    }
+    #subheader h1{
+        font-size: 22px;
+    }
+    #slider_img{
+        min-height: 120px;
+    }
 }
 
 .teaser { 
@@ -1120,4 +1147,5 @@ address span strong {
 	z-index: 1;
 	position: static;
 }
+
 
