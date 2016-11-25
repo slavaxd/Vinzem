@@ -18,7 +18,7 @@
                     <div class="slider-container">
 			<div class="slider-info">
                         <a href="javascript:void(0);" style="text-decoration: none" >    
-			<div class="inner" style="text-decoration: none" data-control="{{ slider.content}}" data-cropped="{{ slider.content|slider_text }}" data-title="{{ slider.title }}">
+			<div class="inner scrol" style="text-decoration: none" data-control="{{ slider.content}}" data-cropped="{{ slider.content|slider_text }}" data-title="{{ slider.title }}">
                                 <h1>{{ slider.title }}</h1>
                                 <div class="slider-text" align="justify" style="">
                                     {{ slider.content|slider_text }}
@@ -43,11 +43,11 @@
 <script>
 	
 	$(document).ready(function(){
-		$('.inner').click(function(){
+		$('.scrol').click(function(){
 			for (var i = 0; i < 10; i++){
 				window.clearInterval(i)
 			}
-			console.log('.inner clicked' + $(this).html())
+			console.log('.scrol clicked' + $(this).html())
 			let orig = $( $(this).html())
 			let all_text = $(this).attr('data-control')
 			let title = $(this).attr('data-title')
@@ -92,7 +92,7 @@
             <div class="span4">
                 <div class="featured-box">
                     <i class="fa-diamond icon-4x" aria-hidden="true"></i>
-                    <div class="text">
+                    <div class="text" style="padding-left: 90px">
                         <h3>Якість</h3>
                         Якість товару (послуг) - веде до успіху!
                     </div>

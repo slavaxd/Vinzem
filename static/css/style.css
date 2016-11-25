@@ -800,7 +800,8 @@ address span strong {
     color: #044269
 }
 .featured-box .text {
-    padding-left: 70px
+    padding-left: 70px;
+    height: 6em;
 }
 .flexslider {
     margin: 0;

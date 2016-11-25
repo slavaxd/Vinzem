@@ -11,7 +11,7 @@
 
     <div class="clearfix"></div>
     <div class="row">
-        <div class="span8">
+        <div class="span10 offset1">
             <ul class="blog-list">
             	{% for news in latest_news_list %}
             	<li>
@@ -22,13 +22,13 @@
             			</div>
             		</div>
             		<div class="preview">
-            		<!--news.image.url-->	<img src="{{ news.image.url|resize:'320x240' }}" data-original="{{ news.image.url|resize:'320x240' }}" alt="" style="display: inline;">
+            		<!--news.image.url-->	<img src="{{ news.image.url|resize:'640x480' }}" style="max-width: 480px; max-height: 640px" data-original="{{ news.image.url|resize:'320x240' }}" alt="" style="display: inline;">
             			<a href="news/{{ news.id }}">
             				<h3 class="blog-title">{{ news.title }}</h3>
             			</a>
             			{{ news.text|safe }}
             		</div>
-            		<div class="meta-info">От <a href="#">Admin</a><span>|</span><a href="#">События</a>, <a href="#">События</a><span>|</span><a href="#">2 Комм.</a><span>|</span> </div>
+            		<div class="meta-info">От <a href="#">Admin</a><!--span>|</span><a href="#">События</a>, <a href="#">События</a><span>|</span><a href="#">2 Комм.</a><span>|</span--> </div>
             	</li>
             	{% endfor %}
             </ul>
@@ -44,7 +44,7 @@
                         </ul>
                     </div>
         </div>
-        <div id="sidebar" class="span4">
+        <!--div id="sidebar" class="span4">
             <div class="widget latest_news">
                 <h4 class="title">Последние новости</h4>
                 <ul class="bloglist-small">
@@ -63,7 +63,7 @@
                     {% endfor %}
                 </ul>
             </div>
-        </div>
+        </div-->
     </div>
 
 
