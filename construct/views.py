@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.template import loader
 import random
 
-from .models import News, GalleryImage, StaticPage, Application, Slider, Service, Person
+from .models import News, GalleryImage, StaticPage, Application, Slider, Service, Person, IndexBehindLink, WorkHours
 
 from .forms import ApplicationForm
 
@@ -18,6 +18,10 @@ def index(request):
 			categories.append(Service.objects.filter(category=str(x))[r])
 	#print categories
 	sliders = Slider.objects.order_by('id')[:4]
+	bottom = IndexBehindLink.objects.first()
+	result['bottom'] = bottom
+	workhours = WorkHours.objects.first()
+	result['workhours'] = workhours
 	result['categories'] = categories
 	result['sliders'] = sliders
 	template = loader.get_template("index.html")
@@ -88,8 +92,9 @@ def contact(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = ApplicationForm()
-
-    return render(request, 'contact.html', {'form': form})
+    workhours = WorkHours.objects.first()
+    #result['workhours'] = workhours
+    return render(request, 'contact.html', {'form': form, 'workhours': workhours})
 
 def static_page(request, page_slug):
 	page = StaticPage(slug=page_slug)

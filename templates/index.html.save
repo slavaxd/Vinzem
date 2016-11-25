@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load construct_extras %}
+{% load thumbnail %}
+{% load imagefit %}
+{% block title %} ДП "Вінницький науково-дослідний та проектний інститут землеустрою" {% endblock %}
+
+{% block subheader %} Державне підприємство "Вінницький науково-дослідний та проектний інститут землеустрою" {% endblock %}
+
+{% block content %}
+
+    </script>
+     <section id="slider">
+        <div class="flexslider main-slider">
+            <ul class="slides">
+                {% for slider in sliders %}
+                <li>
+                	<div class="container">
+                        <div class="slider-info">
+                            <div class="inner">
+                                <h1>{{ slider.title }}</h1>
+                                <div class="slider-text" data-origin="{{ slider.content}}" data-tynified=>
+                                    {{ slider.content| }}
+                                </div>
+                                <!--a class="btn btn-primary">Подробнее</a-->
+                            </div>
+                        </div>
+                    </div>
+                    <img style="max-height: 450px; min-height:450px; max-width:1200px" src="{{ slider.image.url|resize:'1286x450' }}"
+                  </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <!-- slider close -->
+<script>
+	$(document).ready(function(){
+		$('.slider-text').click(function(){
+			for (var i = 0; i < 10; i++){
+				window.clearInterval(i)
+			}
+			console.log('.slider-text clicked' + $(this).html())
+			$(this).html($(this).attr("data-control"))
+		})
+	})
+
+</script>
+<div id="content">
+<div class="container">
+<div class="row">
+    <div class="clearfix"></div>
+
+    <div class="text-title">
+        <h2>Вітаємо!</h2>
+        <div>Ви знаходитесь на сайті державного підприємства "Вінницький науково-дослідний та проектний інститут землеустрою"</div>
+    </div>
+            <div class="span4">
+                <div class="featured-box">
+                    <i class="fa-bolt icon-4x" aria-hidden="true"></i>
+                    <div class="text">
+
+                        <h3>Швидкість</h3>
+                        Опис швидкості
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="featured-box">
+                    <i class="fa-percent icon-4x" aria-hidden="true"></i>
+                    <div class="text">
+                        <h3>Ціна</h3>
+                        Опис ціни
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="featured-box">
+                    <i class="fa-diamond icon-4x" aria-hidden="true"></i>
+                    <div class="text">
+                        <h3>Якість</h3>
+                        Опис якості
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <!-- paralax background -->
+    <section id="ourservice-parallax-bg" data-speed="5" data-type="background">
+        <div class="container">
+            <div class="row">
+                <div class="text-title">
+                    <h2>Професійний підхід до кожного виду робіт</h2>
+                    <div>Опис</div>
+                </div>
+                {{ services }}
+                {% for service in categories %}
+                    <!-- ourservice item begin -->
+                    <div class="span3 ourservice-item service-preview">
+                        <a class="preview" href="{{ service.image.url|resize:'180x270' }}" data-gal="prettyPhoto" title="Описание">
+                            <img class="img-responsive" data-original="{{ service.image.url|resize:'270x180' }}" src="{{ service.image.url|resize:'270x180' }}" alt="" class="img-hover"></a>
+                        <div class="text">
+                            <h4><a href="/services/{{ service.id }}">{{ service.title }}</a></h4>
+                            <div class="teaser">
+                                {{ service.text|fifty }}
+                            </div>
+                            <div class="price">
+                                {{ service.price }} грн.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ourservice item close -->
+
+                {% endfor %}
+
+
+
+            </div>
+        </div>
+    </section>
+
+<div class="container">
+    <div class="row">
+
+        <div class="span8">
+            <div class="text-title">
+                <h2>Title</h2>
+                <div>С другой стороны постоянное информационно-пропагандистское обеспечение нашей</div>
+            </div>
+            <ul class="bloglist-small">
+                <li>
+                    <div class="txt">
+                        <h4><a href="css/index.html#">Оформленне документів учасникам АТО та уг.БД за 50% від вартості </a></h4>
+                        <span class="read">С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения соответствующий условий активизации. <a href="#">Подробнее</a></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="txt">
+                        <h4><a href="css/index.html#">Знижки при оплаті</a></h4>
+                        <span class="read">С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения соответствующий условий активизации. <a href="#">Подробнее</a></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="txt">
+                        <h4><a href="css/index.html#">Терміновість</a></h4>
+                        <span class="read">С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения соответствующий условий активизации. <a href="#">Подробнее</a></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="span4">
+            <a class="blog-logo pic" href="http://land.gov.ua/" title="Державна служба України з питань геодезії, картографії та кадастру — Офіційний веб-сайт" rel="home">
+                <img src="http://land.gov.ua/wp-content/uploads/2016/01/logo.png" alt="Державна служба України з питань геодезії, картографії та кадастру"  width="341" height="227">
+            </a>
+            <a class="blog-logo pic" href="http://map.land.gov.ua/kadastrova-karta" title="Публічна кадастрова карта — Офіційний веб-сайт" target="_blank">
+                <img  class="alignnone size-full" src="http://land.gov.ua/wp-content/uploads/2015/07/bunner-map.jpg" width="340" height="228">
+            </a>
+
+            <a class="blog-logo pic" href="http://www.vin.gov.ua/" title="Вінницька ОДА — Офіційний веб-сайт" target="_blank">
+                <img  class="alignnone size-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Prapor_Vinnytskoyi_oblasti.svg/2000px-Prapor_Vinnytskoyi_oblasti.svg.png" width="340" height="340">
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

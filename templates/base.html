@@ -1,9 +1,8 @@
-{% load thumbnail %}
 <!DOCTYPE html>
 <html lang="en">
 <!-- created by Yuryy Pogoreliuk and Viacheslav Semeniuk-->
 <head>
-
+    {% load thumbnail %}
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +21,9 @@
     <script src="/static/js/ender.js"></script>
     <script src="/static/js/jquery.flexslider-min.js"></script>
     <script src="/static/js/custom.js"></script>
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -30,7 +32,7 @@
         <div id="logo">
             <div class="inner">                
                 <a href="/">
-                    <img src="/static/img/logo1.png" alt="img">
+                    <img src="/static/img/the_newest_logo_from_bmp.png" alt="img">
                     <h3>ДП "Вінницький науково-дослідний <br>та проектний інститут землеустрою"</h3>                 
                 </a>                
             </div>

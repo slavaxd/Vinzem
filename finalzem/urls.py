@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^', include('construct.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^imagefit/', include('imagefit.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^summernote/', include('django_summernote.urls')),
 ]# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

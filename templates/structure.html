@@ -14,7 +14,8 @@
         <td style="height: 300px; width: 200px" rawspan="2"><img src="{{ person.image.url }}"></td>
         <td>
             <h3 align="center">{{ person.name }}</h3>
-            <p align="center">{{ person.description }}</p>
+            <div align="center">{{ person.description|safe }}</div>
+	    <!--p>TEST2</p-->
         </td>
 
 

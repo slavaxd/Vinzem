@@ -27,6 +27,13 @@ def fifty(value):
     res = value[:50] + "..."
     return res
 
+@register.filter(name='slider_text')
+def slider_text(value):
+    if len(value) > 400:
+        return value[:400] + '...'
+    return value
+
+
 @register.filter(name='unescape')
 def unescape(value):
     h = HTMLParser()

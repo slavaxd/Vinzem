@@ -4,12 +4,40 @@
 {% block title %} Контакти компанії {% endblock %}
 
 {% block subheader %} Контакти компанії 	{% endblock %}
-{% block map %}<div id="map-container">
+{% block map %}
+<hr/>
+<div id="map-cont" class="span6 offset3" >
+	<div id="map" style="width: 100%; height: 400px" ></div>
+</div>
+
+<script>
+ymaps.ready(init);
+    var myMap,
+        myPlacemark;
+
+    function init(){     
+        myMap = new ymaps.Map("map", {
+            center: [ 49.224915, 28.414939],
+            zoom: 17
+        });
+
+        myPlacemark = new ymaps.Placemark([49.224915, 28.414939], { 
+            hintContent: 'ДП "Вінницький науково-дослідний та проектний інститут землеустрою"', 
+            balloonContent: 'Наш інститут' 
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+</script>
+
+<!--div class="span8 offset2" id="map-container">
     <iframe src="https://www.google.com/maps/embed/v1/place?q=49.224952%2C%2028.415035%20&key=AIzaSyCrMTVLWiYhNdwkNrV_GnrhC_4U4bvIXEo" width="100%" height="370" frameborder="0" style="border:0" allowfullscreen></iframe>
-</div>{% endblock %}
+</div-->
+<hr/>
+{% endblock %}
 {% block content %}
 <div class="row">
-<div class="span8">
+<!--div class="span8">
     <div class="contact_form_holder">
          <form id="contact" class="row" name="form1" method="post" action="/contact">
              {% csrf_token %}
@@ -46,12 +74,10 @@
 
          </form>
     </div>
-</div>
+</div-->
 
- <div id="sidebar" class="span4">
-     <!-- widget category -->
-     <!-- widget tags -->
-     <!-- widget text -->
+ <!--div id="sidebar" class="span6 offset3">
+     
      <div class="widget widget-opening-hours">
          <h4 class="title"><span>Години роботи</span></h4>
          <ul class="opening-hours">
@@ -84,7 +110,9 @@
              <a href="#"<img src="img/social-icons/vimeo.png" alt="" /></a>
          </div>
      </div>
- </div>
+ </div-->
+<div class="span6 offset3" style="margin-bottom:5em;">
+	{{ workhours.description|safe }}
 </div>
-
+</div>
 {% endblock %}

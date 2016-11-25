@@ -29,7 +29,8 @@
 				<img src="{{ img.image.url|resize:"270x180,C" }}" data-original="{{ img.image.url|resize:"640x427,C" }}" alt="">
 			</a>
 			<h4>{{ img.text }}</h4>
-			<span>{{ img.created_at }}</span>
+			<!--span>{{ img.event_date }}</span-->
+			<span>{{ img.description }}</span>
 		</div>
 
     {% endfor %}
@@ -37,6 +38,6 @@
 </div>
 
 <script>/*$(document).load(*/
-setTimeout(function(){$('body').trigger('resize'); console.log("resizing");}, 3000)
+setInterval(function(){$('body').trigger('resize'); console.log("resizing");}, 3000)
 /*});*/</script>
 {% endblock %}

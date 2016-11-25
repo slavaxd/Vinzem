@@ -9,12 +9,13 @@
 
     <div class="row">
         <div class="ourservice-single">
-            <div class="span8">
-                <img data-original="{{ service.image.url }}"  src="/{{ service.image.url }}" class="img-polaroid" alt="">
-            </div>
-            <div class="span4">
+            <div class="span12">
+                <div class="span6" style="margin-right: 2em">
+			<img data-original="{{ service.image.url }}"  src="/{{ service.image.url }}" class="img-polaroid" alt="">
+		</div>
+      
                 <!--h3>{{ service.title }}</h3-->
-                <p>{{ service.text }}</p>
+                <p>{{ service.text|safe }}</p>
             </div>
         </div>
     </div>

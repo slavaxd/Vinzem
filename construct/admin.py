@@ -3,8 +3,9 @@ from django import forms
 
 from ckeditor.widgets import CKEditorWidget
 
+#from django_summernote.admin import SummernoteModelAdmin
 
-from .models import News, GalleryImage, StaticPage, Application, Slider, Service, Person
+from .models import News, GalleryImage, StaticPage, Application, Slider, Service, Person, IndexBehindLink, WorkHours
 
 #admin.site.register(News)
 admin.site.register(GalleryImage)
@@ -12,6 +13,11 @@ admin.site.register(GalleryImage)
 admin.site.register(Application)
 admin.site.register(Slider)
 admin.site.register(Person)
+admin.site.register(IndexBehindLink)
+admin.site.register(WorkHours)
+
+#class PersonForm(SummernotModelAdmin):
+#    pass
 
 class NewsAdminForm(forms.ModelForm):
     text = forms.CharField(widget=CKEditorWidget())

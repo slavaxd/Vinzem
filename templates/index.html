@@ -1,37 +1,66 @@
 {% extends "base.html" %}
 {% load construct_extras %}
 {% load thumbnail %}
-
+{% load imagefit %}
 {% block title %} ДП "Вінницький науково-дослідний та проектний інститут землеустрою" {% endblock %}
 
 {% block subheader %} Державне підприємство "Вінницький науково-дослідний та проектний інститут землеустрою" {% endblock %}
 
 {% block content %}
 
-    </script>
+
      <section id="slider">
         <div class="flexslider main-slider">
             <ul class="slides">
                 {% for slider in sliders %}
                 <li>
-                	<div class="container">
-                        <div class="slider-info">
-                            <div class="inner">
+	            <div class="container">
+                    <div class="slider-container">
+			<div class="slider-info">
+                        <a href="javascript:void(0);" style="text-decoration: none" >    
+			<div class="inner" style="text-decoration: none" data-control="{{ slider.content}}" data-cropped="{{ slider.content|slider_text }}" data-title="{{ slider.title }}">
                                 <h1>{{ slider.title }}</h1>
-                                <div class="slider-text">
-                                    {{ slider.content }}
+                                <div class="slider-text" align="justify" style="">
+                                    {{ slider.content|slider_text }}
                                 </div>
-                                <a class="btn btn-primary">Подробнее</a>
-                            </div>
+                                <!--a class="btn btn-primary">Подробнее</a-->
                         </div>
+			
+
+			
+			</a>
+                        </div>
+			
                     </div>
-                    <img src="/{{ slider.image.url }}"
+		    </div>
+                    <img style="max-height: 450px; min-height:450px; max-width:1200px" src="{{ slider.image.url|resize:'1286x450' }}">
                   </li>
                 {% endfor %}
             </ul>
         </div>
     </section>
     <!-- slider close -->
+<script>
+	
+	$(document).ready(function(){
+		$('.inner').click(function(){
+			for (var i = 0; i < 10; i++){
+				window.clearInterval(i)
+			}
+			console.log('.inner clicked' + $(this).html())
+			let orig = $( $(this).html())
+			let all_text = $(this).attr('data-control')
+			let title = $(this).attr('data-title')
+			let all_in = '<h1 align="justify">' + title +'</h1> <div class="slider-text" align="justify" style="margin-bottom:4em" >' + all_text +  '</div>'
+			$(this).css('width', '1090px')
+			$(this).css('overflow', 'scroll')
+			//$(this).css('margin-bottom', '3em')
+			$(this).html(all_in)
+			//$(this).html($(this).attr("data-control"))
+		})
+	})
+
+</script>
 <div id="content">
 <div class="container">
 <div class="row">
@@ -47,7 +76,7 @@
                     <div class="text">
 
                         <h3>Швидкість</h3>
-                        Опис швидкості
+			Можливість виготовлення документів в короткий термін!
                     </div>
                 </div>
             </div>
@@ -56,7 +85,7 @@
                     <i class="fa-percent icon-4x" aria-hidden="true"></i>
                     <div class="text">
                         <h3>Ціна</h3>
-                        Опис ціни
+			Оптимальні ціни на всі види робіт!
                     </div>
                 </div>
             </div>
@@ -65,7 +94,7 @@
                     <i class="fa-diamond icon-4x" aria-hidden="true"></i>
                     <div class="text">
                         <h3>Якість</h3>
-                        Опис якості
+                        Якість товару (послуг) - веде до успіху!
                     </div>
                 </div>
             </div>
@@ -85,12 +114,12 @@
                 {% for service in categories %}
                     <!-- ourservice item begin -->
                     <div class="span3 ourservice-item service-preview">
-                        <a class="preview" href="{{ service.image.url }}" data-gal="prettyPhoto" title="Описание">
-                            <img class="img-responsive" data-original="{{ service.image.url }}" src="{{ service.image.url }}" alt="" class="img-hover"></a>
+                        <a class="preview" href="{{ service.image.url|resize:'180x270' }}" data-gal="prettyPhoto" title="Описание">
+                            <img class="img-responsive" data-original="{{ service.image.url|resize:'270x180' }}" src="{{ service.image.url|resize:'270x180' }}" alt="" class="img-hover"></a>
                         <div class="text">
                             <h4><a href="/services/{{ service.id }}">{{ service.title }}</a></h4>
                             <div class="teaser">
-                                {{ service.text|fifty }}
+                                {{ service.text|striptags|fifty }}
                             </div>
                             <div class="price">
                                 {{ service.price }} грн.
@@ -111,7 +140,8 @@
     <div class="row">
 
         <div class="span8">
-            <div class="text-title">
+	    {{ bottom.description|safe }}
+            <!--div class="text-title">
                 <h2>Title</h2>
                 <div>С другой стороны постоянное информационно-пропагандистское обеспечение нашей</div>
             </div>
@@ -134,7 +164,7 @@
                         <span class="read">С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения соответствующий условий активизации. <a href="#">Подробнее</a></span>
                     </div>
                 </li>
-            </ul>
+            </ul-->
         </div>
         <div class="span4">
             <a class="blog-logo pic" href="http://land.gov.ua/" title="Державна служба України з питань геодезії, картографії та кадастру — Офіційний веб-сайт" rel="home">
@@ -149,5 +179,4 @@
             </a>
         </div>
     </div>
-</div>
-{% endblock %}
+</div>{% endblock %}
