@@ -10,9 +10,9 @@
 
 <table>
     {% for person in people %}
-    <tr>
-        <td style="height: 300px; width: 200px" rawspan="2"><img src="{{ person.image.url }}"></td>
-        <td>
+    <tr class="tr">
+        <td class="td-img" rawspan="2"><img style="height: 300px; width: 240px;" src="{{ person.image.url }}"></td>
+        <td class="td-text">
             <h3 align="center">{{ person.name }}</h3>
             <div align="center">{{ person.description|safe }}</div>
 	    <!--p>TEST2</p-->

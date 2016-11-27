@@ -1021,9 +1021,24 @@ address span strong {
     color: #555
 }
 .slider_img{
-        max-height: 450px;
-        min-height:450px;
-        max-width:1200px
+    max-height: 450px;
+    min-height:450px;
+    max-width:1200px
+}
+.tr{
+    position: relative;
+    height: 350px;
+}
+.td-img{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 0
+}
+.td-text{
+    position: absolute;
+    width: 70%;
+    margin-left: 250px;
+    margin-top: 50px;
 }
 @media (max-width: 1170px) {
     .main-slider .slider-info .inner {
@@ -1146,6 +1161,26 @@ address span strong {
     }
     .featured-box{
         padding:13px;
+    }
+    .tr{
+        position: relative;
+        height: 850px;
+    }
+    .td-img{
+        position: absolute;
+        height:300px;
+        margin-left: 30px 
+        
+    }
+    .td-text{
+        position: absolute;
+        height: 600px;
+        margin-top: 350px;
+        margin-left: 10px;
+        width: 90%
+    }
+    .td-text div{
+        text-align: left
     }
     
 }
