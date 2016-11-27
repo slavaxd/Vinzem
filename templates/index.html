@@ -33,7 +33,7 @@
 			
                     </div>
 		    </div>
-                    <img id="slider_img" src="{{ slider.image.url|resize:'1286x450' }}">
+                    <img class="slider_img" src="{{ slider.image.url|resize:'1286x450' }}">
                   </li>
                 {% endfor %}
             </ul>
@@ -114,8 +114,8 @@
                 {% for service in categories %}
                     <!-- ourservice item begin -->
                     <div class="span3 ourservice-item service-preview">
-                        <a class="preview" href="{{ service.image.url|resize:'180x270' }}" data-gal="prettyPhoto" title="Описание">
-                            <img class="img-responsive" data-original="{{ service.image.url|resize:'270x180' }}" src="{{ service.image.url|resize:'270x180' }}" alt="" class="img-hover"></a>
+                        <a class="preview" href="{{ service.image.url }}" data-gal="prettyPhoto" title="Описание">
+                            <img class="img-responsive" data-original="{{ service.image.url }}" src="{{ service.image.url }}" alt="" class="img-hover"></a>
                         <div class="text">
                             <h4><a href="/services/{{ service.id }}">{{ service.title }}</a></h4>
                             <div class="teaser">

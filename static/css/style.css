@@ -117,7 +117,7 @@ a:hover {
     width:15em;
 }
 #content {
-    padding: 60px 0 60px 0
+    padding: 0;
 }
 #mainourservice a {
     -o-transition: .5s;
@@ -800,7 +800,7 @@ address span strong {
     color: #044269
 }
 .featured-box .text {
-    padding-left: 70px;
+    padding-left: 60px;
     height:6em;
 }
 .flexslider {
@@ -891,6 +891,7 @@ address span strong {
 }
 .ourservice-item-1 img {
     width: 120px;
+    height:180px;
     float: left
 }
 .ourservice-list-2 {
@@ -1019,7 +1020,7 @@ address span strong {
     background: #fff;
     color: #555
 }
-#slider_img{
+.slider_img{
         max-height: 450px;
         min-height:450px;
         max-width:1200px
@@ -1099,8 +1100,8 @@ address span strong {
     footer,
     #subheader,
     #booking {
-        padding-left: 20px;
-        padding-right: 20px
+        padding-left: 2px;
+        padding-right: 2px
     }
     header,
     #mainourservice-container {
@@ -1132,9 +1133,21 @@ address span strong {
     #subheader h1{
         font-size: 22px;
     }
-    #slider_img{
+    .slider_img{
         min-height: 120px;
     }
+    .text-title div{
+        margin-left: 30px;
+        text-align: left;    
+    }
+    .text-title h2{
+        font-size: 35px;
+        line-height: 30px;
+    }
+    .featured-box{
+        padding:13px;
+    }
+    
 }
 
 .teaser { 

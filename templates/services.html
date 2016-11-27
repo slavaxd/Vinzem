@@ -20,7 +20,7 @@
         {% for service in services %}
 
         <li class="span3"><a class="preview" href="{{ service.image.url }}" data-gal="prettyPhoto" title="Описание">
-            <img data-original="{{ service.image.url }}"  src="{{ service.image.url }}" class="img-polaroid img-hover" alt=""></a>
+            <img data-original="{{ service.image.url }}"  src="{{ service.image.url }}" class="img-responsive img-polaroid img-hover " alt=""></a>
             <div class="text">
                 <div class="price">{{ service.price }} грн.</div>
                 <a href="services/{{ service.id }}">
