@@ -1,5 +1,5 @@
 cffi==1.7.0
-Django==1.8.12
+Django==2.2.24
 django-autoslug==1.9.3
 django-ckeditor==5.0.3
 django-flat-theme==1.1.3
